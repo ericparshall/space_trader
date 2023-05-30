@@ -7,7 +7,9 @@
     "scss:watch": "sass --watch public/stylesheets:public/stylesheets",
     "scss:build": "sass public/stylesheets:public/stylesheets",
     "nodemon": "nodemon ./bin/www",
-    "dev": "npm-run-all --parallel nodemon scss:watch"
+    "dev": "npm-run-all --parallel nodemon scss:watch",
+    "migration:generate": "node ./scripts/generateMigration.js",
+    "migration:run": "node ./scripts/runMigrations.js"
   },
   "dependencies": {
     "axios": "^1.4.0",
@@ -17,6 +19,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "luxon": "^3.3.0",
     "morgan": "~1.9.1",
     "pg": "^8.11.0",
     "sass": "^1.62.1"
