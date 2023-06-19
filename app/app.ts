@@ -1,12 +1,12 @@
 import cookieParser from "cookie-parser";
 import * as dotenv from "dotenv";
-import express, { type NextFunction, type Request, type Response } from "express";
-import createHttpError from "http-errors";
+import express from "express";
 import logger from "morgan";
 import path from "path";
 
 import { appRoot } from "./lib/project.js";
 import handleError from "./middlewares/handleError.js";
+import handleNotFound from "./middlewares/handleNotFound.js";
 import indexRouter from "./routes/index.js";
 import usersRouter from "./routes/users.js";
 
@@ -27,10 +27,6 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
 app.use(handleError);
-
-// catch 404 and forward to error handler
-app.use((_req: Request, _res: Response, next: NextFunction) => {
-  next(createHttpError(404));
-});
+app.use(handleNotFound);
 
 app.listen(process.env.PORT ?? "3000");
