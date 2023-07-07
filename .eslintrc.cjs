@@ -23,9 +23,23 @@ module.exports = {
     "simple-import-sort"
   ],
   rules: {
+    "@typescript-eslint/comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }],
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/quotes": ["error", "double"],
     "@typescript-eslint/semi": ["error", "always"],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }],
     indent: ["error", 2],
     "max-len": ["error", {
       code: 120

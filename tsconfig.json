@@ -5,6 +5,8 @@
     "target": "ES2020",
     "alwaysStrict": true,
     "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "sourceMap": false,
     "strict": true,
     "noImplicitAny": true,
@@ -16,12 +18,13 @@
     "noFallthroughCasesInSwitch": false,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "typeRoots": ["./node_modules/@types"],
     "outDir": "app",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["app/**/*", ".eslintrc.js"],
+  "include": ["app/**/*",
+    ".eslintrc.cjs"
+  ],
   "exclude": ["node_modules"]
 }
