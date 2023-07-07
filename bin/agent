@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Change to root directory if running from bin
+SCRIPT_PATH=${0%/*}
+if [[ "$SCRIPT_PATH" == "." ]]
+then
+  cd ..
+fi
+
+# Load environment variables if .env file exists
+if test -f ".env"
+then
+  set -a
+  source .env
+  set +a
+fi
+
+
+tsc
+node app/scripts/agent.js "$@"
